@@ -15,6 +15,31 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+daisyui: {
+    themes: [
+      // {
+      //   mytheme: {
+      //     primary: '#a8d676', // Custom primary color
+      //     secondary: '#d4a5a5', // Example secondary color
+      //     accent: '#f6c6c6', // Example accent color
+      //     neutral: '#2a2a2a', // Example neutral color
+      //     'base-100': '#ffffff', // Example base color
+      //   },
+      // },
+      'dark',
+      // {
+      //   dark: {
+      //     primary: '#a8d676', // Custom primary color for dark theme
+      //     secondary: '#d4a5a5', // Example secondary color for dark theme
+      //     accent: '#f6c6c6', // Example accent color for dark theme
+      //     neutral: '#2a2a2a', // Example neutral color for dark theme
+      //     'base-100': '#1a1a1a', // Example base color for dark theme
+      //   },
+      // },
+    ],
+  },
+  plugins: [
+    require('daisyui'),
+  ],
 };
 export default config;
