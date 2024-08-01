@@ -17,15 +17,16 @@ const config: Config = {
   },
 daisyui: {
     themes: [
-      // {
-      //   mytheme: {
-      //     primary: '#a8d676', // Custom primary color
-      //     secondary: '#d4a5a5', // Example secondary color
-      //     accent: '#f6c6c6', // Example accent color
-      //     neutral: '#2a2a2a', // Example neutral color
-      //     'base-100': '#ffffff', // Example base color
-      //   },
-      // },
+      {
+        mytheme: {
+          primary: '#a8d676', // Custom primary color
+          secondary: '#d4a5a5', // Example secondary color
+          accent: '#f6c6c6', // Example accent color
+          neutral: '#2a2a2a', // Example neutral color
+          'base-100': '#ffffff', // Example base color
+        },
+      },
+      'light',
       'dark',
       // {
       //   dark: {

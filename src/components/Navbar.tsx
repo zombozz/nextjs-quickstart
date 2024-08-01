@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-base-100 shadow-lg">
+    <nav className="bg-base-100 shadow-lg fixed w-full z-10">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -52,12 +53,16 @@ const Navbar = () => {
             <Link href="/about" className="btn btn-ghost">
               About
             </Link>
-            <Link href="/services" className="btn btn-ghost">
+            {/* <Link href="/services" className="btn btn-ghost">
               Services
+            </Link> */}
+            <Link href="/pricing" className="btn btn-ghost">
+              Pricing
             </Link>
             <Link href="/contact" className="btn btn-ghost">
               Contact
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>
@@ -70,8 +75,11 @@ const Navbar = () => {
         <Link href="/about" className="block px-4 py-2 text-primary border-b border-base-300">
           About
         </Link>
-        <Link href="/services" className="block px-4 py-2 text-primary border-b border-base-300">
+        {/* <Link href="/services" className="block px-4 py-2 text-primary border-b border-base-300">
           Services
+        </Link> */}
+        <Link href="/pricing" className="block px-4 py-2 text-primary border-b border-base-300">
+          Pricing
         </Link>
         <Link href="/contact" className="block px-4 py-2 text-primary">
           Contact
