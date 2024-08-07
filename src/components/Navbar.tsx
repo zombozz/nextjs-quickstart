@@ -1,8 +1,17 @@
-"use client"; 
+"use client";
 
 import { useState } from 'react';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
+
+// Configurable links
+const navLinks = [
+  { href: '/', label: 'Job Search' },
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact Us' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +19,13 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-base-100 shadow-lg fixed w-full z-10">
+    <nav className="bg-base-100 shadow-lg sticky w-full z-10">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-xl font-bold">
             <Link href="/" className="text-primary">
-              MySite
+              MySite NAME
             </Link>
           </div>
 
@@ -47,21 +56,11 @@ const Navbar = () => {
 
           {/* Desktop Navbar Links */}
           <div className="hidden lg:flex lg:space-x-4">
-            <Link href="/" className="btn btn-ghost">
-              Home
-            </Link>
-            <Link href="/about" className="btn btn-ghost">
-              About
-            </Link>
-            {/* <Link href="/services" className="btn btn-ghost">
-              Services
-            </Link> */}
-            <Link href="/pricing" className="btn btn-ghost">
-              Pricing
-            </Link>
-            <Link href="/contact" className="btn btn-ghost">
-              Contact
-            </Link>
+            {navLinks.map((link, index) => (
+              <Link key={index} href={link.href} className="btn btn-ghost">
+                {link.label}
+              </Link>
+            ))}
             <ThemeToggle />
           </div>
         </div>
@@ -69,21 +68,15 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} bg-base-200`}>
-        <Link href="/" className="block px-4 py-2 text-primary border-b border-base-300">
-          Home
-        </Link>
-        <Link href="/about" className="block px-4 py-2 text-primary border-b border-base-300">
-          About
-        </Link>
-        {/* <Link href="/services" className="block px-4 py-2 text-primary border-b border-base-300">
-          Services
-        </Link> */}
-        <Link href="/pricing" className="block px-4 py-2 text-primary border-b border-base-300">
-          Pricing
-        </Link>
-        <Link href="/contact" className="block px-4 py-2 text-primary">
-          Contact
-        </Link>
+        {navLinks.map((link, index) => (
+          <Link
+            key={index}
+            href={link.href}
+            className={`block px-4 py-2 text-primary ${index < navLinks.length - 1 ? 'border-b border-base-300' : ''}`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </nav>
   );
