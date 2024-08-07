@@ -1,5 +1,2 @@
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 9939018023604ee2f60e6a6bd4d88603e51dc955
+## Overview
+just some boilerplate code for me to use on other projects use it if you like i guess
